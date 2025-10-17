@@ -10,7 +10,7 @@ require("dotenv").config();
 const forms = require("./models/forms");
 
 //import routes
-const formsRoutes = require("./pream/Routes/salesRoutes");
+const formsRoutes = require("./pream/routes/formsRoutes");
 
 const app = express();
 const port = 3001;

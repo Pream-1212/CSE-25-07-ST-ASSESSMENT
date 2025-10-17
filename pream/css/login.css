@@ -1,3 +1,4 @@
+  /*login form*/
  body {
       background: linear-gradient(135deg, #254B33, #B5D8C7);
       height: 100vh;
@@ -39,6 +40,70 @@
     }
 
     .btn-login:hover {
+      background-color: #B5D8C7;
+      color: #254B33;
+    }
+
+    .extra-links {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .extra-links a {
+      color: #254B33;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .extra-links a:hover {
+      text-decoration: underline;
+    }
+  
+    /*sign up form*/
+
+    
+    body {
+      background: linear-gradient(135deg, #254B33, #B5D8C7);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .register-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 40px 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .register-card h2 {
+      text-align: center;
+      color: #254B33;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .form-control {
+      border-radius: 30px;
+      padding: 10px 15px;
+    }
+
+    .btn-register {
+      width: 100%;
+      border-radius: 30px;
+      background-color: #254B33;
+      color: white;
+      font-weight: 600;
+      padding: 10px;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .btn-register:hover {
       background-color: #B5D8C7;
       color: #254B33;
     }
