@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | MWF</title>
+
+  <link rel="stylesheet" href="/pream/public/css/login.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+      <input type="text" name="phone" id="phone" placeholder="Email or Phone Number" required>
+      <input type="password" name="password" id="password" placeholder="Password" required>
+      <button type="submit">LOGIN</button>
+    </form>
+
+    <p class="signup-link">Don’t have an account? <a href="/signup">Signup</a></p>
+  </div>
+
+</body>
+</html>
