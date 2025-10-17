@@ -1,13 +1,18 @@
 meta(charset="UTF-8")
 meta(name="viewport", content="width=device-width,initial-scale=1")
 title Login | MWF
-link(rel="stylesheet", href="/pream/public/css/login.css")
+link(rel="stylesheet", href="/css/login.css")
+
 .login-container
   h2 Login
-  form(action="/login", method="POST")
+  form#loginForm(action="/login", method="POST" novalidate)
     input#phone(type="text", name="phone", placeholder="Email or Phone Number", required)
+    span#errorPhone.error-msg
     input#password(type="password", name="password", placeholder="Password", required)
+    span#errorPassword.error-msg
     button(type="submit") LOGIN
   p.signup-link
     | Don’t have an account? 
     a(href="/signup") Signup
+
+script(src="/pream/js/login.js")

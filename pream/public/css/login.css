@@ -144,4 +144,15 @@
     .extra-links a:hover {
       text-decoration: underline;
     }
+
+    .error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  display: block;
+}
+input:focus {
+  outline: none;
+}
+
   

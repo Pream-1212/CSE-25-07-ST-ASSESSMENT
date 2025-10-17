@@ -3,14 +3,18 @@ const mongoose = require("mongoose");
 const path = require("path");
 const dotenv = require("dotenv");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const flash = require("connect-flash");
+
 
 
 require("dotenv").config();
 //import model
-const forms = require("./models/loginModel");
+const loginModel = require("./models/loginModel");
 
 //import routes
 const formsRoutes = require("./pream/routes/formsRoutes");
+
 
 const app = express();
 const port = 3001;
@@ -32,8 +36,9 @@ app.use(
     saveUninitialized: false,
   })
 );
-app.use(flash());
 
+// Flash middleware
+app.use(flash());
 // Make flash messages available in all templates
 app.use((req, res, next) => {
   res.locals.message = req.flash("message");
@@ -41,7 +46,14 @@ app.use((req, res, next) => {
 });
 // Connect to MongoDB
 
-mongoose.connect(process.env.MONGODB_URL, {});
+mongoose
+  .connect(process.env.MONGODB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
+
 
 mongoose.connection
   .on("open", () => {
@@ -52,7 +64,7 @@ mongoose.connection
   });
 
 // imported routes
-app.use("/", salesRoutes);
+app.use("/", formsRoutes);
 
 //non existent route handler  the 2nd last one
 app.use((req, res) => {
