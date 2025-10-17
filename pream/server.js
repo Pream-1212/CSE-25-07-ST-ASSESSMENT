@@ -2,23 +2,21 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const dotenv = require("dotenv");
-// const multer = require("multer");
 const session = require("express-session");
-// const flash = require("connect-flash");
+
 
 require("dotenv").config();
 //import model
-const SalesModel = require("./models/salesModel");
+const forms = require("./models/forms");
 
 //import routes
-const salesRoutes = require("./pream/Routes/salesRoutes");
+const formsRoutes = require("./pream/Routes/salesRoutes");
 
 const app = express();
 const port = 3001;
 
 // Middleware
 app.use(express.static(path.join(__dirname, "public"))); //static files
-// app.use("/public/uploads", express.static(__dirname + "/public/uploads"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
