@@ -7,7 +7,7 @@ const session = require("express-session");
 
 require("dotenv").config();
 //import model
-const forms = require("./models/forms");
+const forms = require("./models/loginModel");
 
 //import routes
 const formsRoutes = require("./pream/routes/formsRoutes");
